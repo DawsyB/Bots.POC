@@ -10,12 +10,13 @@ using Microsoft.Bot.Builder.Calling.ObjectModel.Contracts;
 using Microsoft.Bot.Builder.Calling.ObjectModel.Misc;
 using System.Text;
 
-namespace Skype.IVRBot.Calling
+namespace Skype.IVRBot
 {
    
     public class IVR : IDisposable, ICallingBot
     {
         public ICallingBotService CallingBotService { get; }
+        private readonly MicrosoftCognitiveSpeechService speechService = new MicrosoftCognitiveSpeechService();
         private readonly Dictionary<string, CallState> callStateMap = new Dictionary<string, CallState>();
         private const string Support = "1";
         private StringBuilder ConversationLogs;
@@ -231,7 +232,7 @@ namespace Skype.IVRBot.Calling
                 StopTones = new List<char> { '#' }
             };
         }
-        #region
+        #endregion
 
         #region Common
         private void AddToTranscript(string Name, string Message)
@@ -255,9 +256,23 @@ namespace Skype.IVRBot.Calling
         /// <returns>Transcribed text. </returns>
         private async Task<string> GetTextFromAudioAsync(Stream audiostream)
         {
-            var text = await this.speechService.GetTextFromAudioAsync(audiostream, new System.Text.StringBuilder());
+            var text = await this.speechService.GetTextFromAudioAsync(audiostream);
             Debug.WriteLine(text);
             return text;
+        }
+        private async Task<string> GetResponseFromAudioAsync(Stream audiostream)
+        {
+            var responseData = await this.speechService.GetResponseFromAudioAsync(audiostream);
+            if (responseData != null)
+            {                
+                return responseData.header.name;
+            }
+            else
+            {
+
+                return string.Empty;
+            }
+           
         }
         private class CallState
         {
@@ -271,7 +286,7 @@ namespace Skype.IVRBot.Calling
             public IEnumerable<Participant> Participants { get; }
         }
         #endregion
-        #endregion
+        
 
        
     }

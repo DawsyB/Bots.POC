@@ -1,17 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web.Http;
+using Microsoft.Bot.Builder.Calling;
+using Microsoft.Bot.Connector;
 
-namespace Skype.IVRBot.Controllers
+namespace Skype.IVRBot
 {
-    public class CallingController : Controller
+    [BotAuthentication]
+    [RoutePrefix("api/calling")]
+    public class CallingController : ApiController
     {
-        // GET: Calling
-        public ActionResult Index()
+        public CallingController() : base()
         {
-            return View();
+            CallingConversation.RegisterCallingBot(callingBotService => new IVR(callingBotService));
+        }
+
+        [Route("callback")]
+        public async Task<HttpResponseMessage> ProcessCallingEventAsync()
+        {
+            return await CallingConversation.SendAsync(this.Request, CallRequestType.CallingEvent);
+        }
+
+        [Route("call")]
+        public async Task<HttpResponseMessage> ProcessIncomingCallAsync()
+        {
+            return await CallingConversation.SendAsync(this.Request, CallRequestType.IncomingCall);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using System;
 
 namespace Skype.IVRBot
 {
@@ -18,7 +19,14 @@ namespace Skype.IVRBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                //await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+
+                ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                // calculate something for us to return
+                int length = (activity.Text ?? string.Empty).Length;
+                // return our reply to the user
+                Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters. You can also send me a .wav file and I will tell you it says ;)");
+                await connector.Conversations.ReplyToActivityAsync(reply);
             }
             else
             {
