@@ -23,7 +23,7 @@ namespace AgentTransferBot
         public async Task<bool> DoesMappingExist(User user, CancellationToken cancellationToken)
         {
             var userAddress = user.GetAddress();
-            var botData = await GetBotDataAsync(userAddress, _botDataStore, cancellationToken);
+            var botData = await GetBotDataAsync(userAddress, _botDataStore, cancellationToken);            
             return botData.PrivateConversationData.ContainsKey(Constants.AGENT_KEY);
         }
 
