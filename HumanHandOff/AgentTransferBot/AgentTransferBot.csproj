@@ -167,12 +167,12 @@
     <Compile Include="Agent\AgentService.cs" />
     <Compile Include="Agent\AgentToUserRouter.cs" />
     <Compile Include="Agent\BotStateMappingStorage.cs" />
-    <Compile Include="Agent\IAgentProvider.cs" />
-    <Compile Include="Agent\IAgentService.cs" />
-    <Compile Include="Agent\IAgentToUser.cs" />
-    <Compile Include="Agent\IAgentUserMapping.cs" />
+    <Compile Include="Agent\Interface\IAgentProvider.cs" />
+    <Compile Include="Agent\Interface\IAgentService.cs" />
+    <Compile Include="Agent\Interface\IAgentToUser.cs" />
+    <Compile Include="Agent\Interface\IAgentUserMapping.cs" />
     <Compile Include="Agent\InMemoryAgentStore.cs" />
-    <Compile Include="Agent\IUserToAgent.cs" />
+    <Compile Include="Agent\Interface\IUserToAgent.cs" />
     <Compile Include="Agent\User.cs" />
     <Compile Include="Agent\UserToAgentRouter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />

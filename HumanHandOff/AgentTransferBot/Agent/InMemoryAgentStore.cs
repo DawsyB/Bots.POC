@@ -12,6 +12,10 @@ namespace AgentTransferBot
         private ConcurrentDictionary<string, Agent> _availableAgents = new ConcurrentDictionary<string, Agent>();
         private static object objectLock = new object();
 
+        /// <summary>
+        /// Gets the next available agent. Also removes the agent from availaibilty pool
+        /// </summary>
+        /// <returns></returns>
         public Agent GetNextAvailableAgent()
         {
             Agent agent = null;
@@ -27,6 +31,11 @@ namespace AgentTransferBot
             return agent;
         }
 
+        /// <summary>
+        /// Adds the agent to the availaibility pool as soon as the agent connects
+        /// </summary>
+        /// <param name="agent"></param>
+        /// <returns></returns>
         public bool AddAgent(Agent agent)
         {
             try
@@ -40,6 +49,11 @@ namespace AgentTransferBot
             }
         }
 
+        /// <summary>
+        /// Removes the agent from the availability pool as soon as the agent disconnects
+        /// </summary>
+        /// <param name="agent"></param>
+        /// <returns></returns>
         public Agent RemoveAgent(Agent agent)
         {
             lock (objectLock)

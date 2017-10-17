@@ -48,6 +48,10 @@ namespace AgentTransferBot
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channels
+                //var msg = message.CreateReply("Conversation Update called!");
+                //await SendToConversationAsync(msg);
+                //msg = message.CreateReply("Id: " + message.MembersAdded.FirstOrDefault().Id + " Name:" + message.MembersAdded.FirstOrDefault().Name);
+                //await SendToConversationAsync(msg);
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {
