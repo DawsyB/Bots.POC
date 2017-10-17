@@ -1,7 +1,7 @@
 # Human Handoff Bot
 A sample for live human handoff/transfer of conversation from user using Microsoft Bot Framework. 
 
-I have written a blog post explaining the solution - https://ankitbko.github.io/2017/03/human-handover-bot/
+The orginial blog post explaining the solution - https://ankitbko.github.io/2017/03/human-handover-bot/
 
 ### Running Solution
 
