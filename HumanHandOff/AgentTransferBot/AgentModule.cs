@@ -1,5 +1,6 @@
 ﻿using AgentTransferBot.Scorable;
 using Autofac;
+using Microsoft.Bot.Builder.History;
 using Microsoft.Bot.Builder.Internals.Fibers;
 using Microsoft.Bot.Builder.Scorables;
 using Microsoft.Bot.Connector;
@@ -49,6 +50,10 @@ namespace AgentTransferBot
             builder.RegisterType<UserToAgentScorable>()
                 .As<IScorable<IActivity, double>>()
                 .InstancePerLifetimeScope();
+
+            
+               
+                
         }
     }
 }

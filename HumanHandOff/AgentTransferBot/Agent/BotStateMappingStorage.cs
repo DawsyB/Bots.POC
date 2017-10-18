@@ -39,6 +39,8 @@ namespace AgentTransferBot
             var userAddress = user.GetAddress();
             var botData = await GetBotDataAsync(userAddress, _botDataStore, cancellationToken);
             Agent agent;
+            // Clear the private conversation data if the user bot stops replying.
+            //botData.PrivateConversationData.Clear(); 
             botData.PrivateConversationData.TryGetValue(Constants.AGENT_KEY, out agent);
             return agent;
         }

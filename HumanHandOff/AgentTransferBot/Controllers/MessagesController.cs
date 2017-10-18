@@ -55,7 +55,7 @@ namespace AgentTransferBot
                    
                 }
                 var msg = message.CreateReply(welcomeMessage);
-                await SendToConversationAsync(msg);
+               // await SendToConversationAsync(msg);
 
                 
                 

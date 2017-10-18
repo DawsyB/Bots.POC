@@ -16,12 +16,12 @@ namespace AgentTransferBot
         private readonly IAgentProvider _agentProvider;
         private readonly IAgentService _agentService;
         private readonly IAgentUserMapping _agentUserMapping;
-
+       
         public UserToAgentRouter(IAgentProvider agentProvider, IAgentService agentService, IAgentUserMapping agentUserMapping)
         {
             _agentProvider = agentProvider;
             _agentService = agentService;
-            _agentUserMapping = agentUserMapping;
+            _agentUserMapping = agentUserMapping;           
         }
 
         public async Task<bool> AgentTransferRequiredAsync(Activity message, CancellationToken cancellationToken)
@@ -45,6 +45,9 @@ namespace AgentTransferBot
             agentReply.Text = $"{message.From.Name} has joined the conversation.";
             await SendToConversationAsync(agentReply);
 
+            agentReply.Text = "Replaying User and Bot conversation: \n\n"+ string.Join("\n\n", ActivityLogger.ChatContainer.ToArray());
+            await SendToConversationAsync(agentReply);
+            ActivityLogger.ChatContainer.Clear();
             return agent;
         }
 
