@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+</head>
+<body>
+    <!--<iframe src='https://webchat.botframework.com/embed/DawsSkypeEmergencyServicesBot?s='></iframe>-->
+    
+        <div id="bot" />
+        <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+        <script>
+            var speechOptions = {
+                speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: '35c854f627c84dc9b46e43454ee539c8' }),
+                speechSynthesizer: new CognitiveServices.SpeechSynthesizer(
+                    {
+                        subscriptionKey: '35c854f627c84dc9b46e43454ee539c8',
+                        gender: CognitiveServices.SynthesisGender.Female,
+                        voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
+                    })
+            }
+
+      BotChat.App({
+          directLine: { secret: "m2Box9IU8_g.cwA.c2k.II63G6D5TWjdGSrh0dBmJpPL3x0FKPCC_7W8hfgRZw4" },
+        user: { id: 'userid' },
+        bot: { id: 'botid' },
+        resize: 'detect'
+      }, document.getElementById("bot"));
+        </script>
+    
+</body>
+</html>

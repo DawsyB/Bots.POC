@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Bot.POC")]
+[assembly: AssemblyTitle("Bot.Multipurpose")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Bot.POC")]
+[assembly: AssemblyProduct("Bot.Multipurpose")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("86a79c26-5eef-4caa-92fd-de32513c162f")]
+[assembly: Guid("02003f6c-36cf-4e75-88b3-a623fca982e4")]
 
 // Version information for an assembly consists of the following four values:
 //

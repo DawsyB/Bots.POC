@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
-namespace Bot.POC.Dialogs
+namespace Bot.Multipurpose.Dialogs
 {
     [Serializable]
     public class RootDialog : IDialog<object>
