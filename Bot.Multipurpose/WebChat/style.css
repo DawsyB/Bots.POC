@@ -1,0 +1,23 @@
+﻿a 
+{
+    text-decoration:none;
+    font-weight:bold;
+}
+body{
+    background-color:aliceblue;
+}
+.wc-header {
+    background-color: #d72800 !important;
+}
+.wc-message-groups{
+    background: antiquewhite !important;
+}
+.wc-message-from-me .wc-message-content {
+    background-color: darkseagreen !important;
+}
+.wc-message-from-bot .wc-message-content {
+    background-color: lightgreen !important;
+}
+.wc-message-from-me svg.wc-message-callout path {
+    fill: darkseagreen !important;
+}

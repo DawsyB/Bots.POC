@@ -4,30 +4,64 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+    <script src="CognitiveServices.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
-    <!--<iframe src='https://webchat.botframework.com/embed/DawsSkypeEmergencyServicesBot?s='></iframe>-->
+    <!-- Link to open the modal -->
+    <p><a href="#ex1" rel="modal:open"><img src="https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/1024/messages_5122x.png" width="50" height="50" />Chat</a></p>
+    <div id="ex1" class="modal" style="height:500px;">
 
-    <div id="bot" />
-    <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
-    <script>
+        <div id="bot" />
+        <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+        <script>
+            const params = BotChat.queryParams(location.search);
+
+            const user = {
+                id: params['userid'] || 'userid',
+                name: params['username'] || 'username'
+            };
+
+            const bot = {
+                id: params['botid'] || 'botid',
+                name: params['botname'] || 'botname'
+            };
+
+
+            window.botchatDebug = params['debug'] && params['debug'] === 'true';
+
             var speechOptions = {
-                speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: '35c854f627c84dc9b46e43454ee539c8' }),
+                speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: params['bk'] }),
                 speechSynthesizer: new CognitiveServices.SpeechSynthesizer(
                     {
-                        subscriptionKey: '35c854f627c84dc9b46e43454ee539c8',
+                        subscriptionKey: params['bk'],
                         gender: CognitiveServices.SynthesisGender.Female,
                         voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
                     })
             }
 
-      BotChat.App({
-          directLine: { secret: "HbRpXQUv6Ac.cwA.Fec.4MWT6kr_-gJGY8qXAkaAkp1HzYTz1g6qXYFo13F-1Nc" },
-        user: { id: 'userid' },
-        bot: { id: 'botid' },
-        resize: 'detect'
-      }, document.getElementById("bot"));
-    </script>
-
+            BotChat.App({
+                directLine: {
+                    domain: params['domain'],
+                    secret: params['s'],
+                    token: params['t'],
+                    webSocket: params['webSocket'] && params['webSocket'] === 'true' // defaults to true
+                },
+                user: user,
+                bot: bot,
+                locale: params['locale'],
+                resize: 'detect',
+                speechOptions: speechOptions
+            }, document.getElementById("bot"));
+        </script>
+    </div>
 </body>
 </html>

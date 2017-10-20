@@ -4,12 +4,14 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using System;
 
 namespace Bot.Multipurpose
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
@@ -23,13 +25,13 @@ namespace Bot.Multipurpose
             }
             else
             {
-                HandleSystemMessage(activity);
+                await HandleSystemMessage(activity);
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
         }
 
-        private Activity HandleSystemMessage(Activity message)
+        private async Task<Activity> HandleSystemMessage(Activity message)
         {
             if (message.Type == ActivityTypes.DeleteUserData)
             {
@@ -41,11 +43,18 @@ namespace Bot.Multipurpose
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channels
+
+                //var msg = message.CreateReply("Hi, I'm multipurpose bot. What can I do for you today?");
+                //ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+                //await connector.Conversations.SendToConversationAsync(msg);
+
+
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {
                 // Handle add/remove from contact lists
                 // Activity.From + Activity.Action represent what happened
+
             }
             else if (message.Type == ActivityTypes.Typing)
             {

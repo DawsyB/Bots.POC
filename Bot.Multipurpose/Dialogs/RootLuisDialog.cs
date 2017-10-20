@@ -15,7 +15,8 @@ namespace Bot.Multipurpose
     [LuisModel("85aaccef-4c54-4318-80bc-912123a03d5a", "8f6d88e12e98423e8e74401ace73c4f4")]
     public class RootLuisDialog : LuisDialog<object>
     {
-        
+        public static int greetingcounter = 1;
+
         [LuisIntent("GetChannelUrl")]
         public async Task AgentTransfer(IDialogContext context, IAwaitable<IMessageActivity> iMessage, LuisResult luisResult)
         {
@@ -33,16 +34,37 @@ namespace Bot.Multipurpose
         [LuisIntent("Greetings")]
         public async Task Greetings(IDialogContext context, IAwaitable<IMessageActivity> iMessage, LuisResult luisResult)
         {
-            var message = "Welcome, I'm multipurpose bot.";
-            await context.PostAsync(message);
+            try
+            {
+                               
+                var incomingMessage = string.Empty;
+                if (greetingcounter == 1)
+                {
+
+                    incomingMessage = "Hey. I'm not trained enough to do anything!";
+                    incomingMessage += "\n\n You said: " + (await iMessage).Text;
+                    greetingcounter++;
+
+                }
+                else
+                {
+                    incomingMessage = "You said: " + (await iMessage).Text;
+                }
+                
+                await context.PostAsync(incomingMessage);
+            }
+            catch (Exception ex)
+            {
+                await context.PostAsync("Found some error "+ex.Message);
+            }
             context.Done<object>(null);
-        }
+            }
 
         [LuisIntent("None")]
         [LuisIntent("")]
         public async Task None(IDialogContext context, IAwaitable<IMessageActivity> iMessage, LuisResult luisResult)
         {
-            var message = "Hooray!! I don't know what to reply. Did you forget to train me? or missing an intent?";
+            var message = "Hooray!! I don't know what to reply. My developer has not designed me to handle this intent?";
             await context.PostAsync(message);          
             context.Done<object>(null);
         }
