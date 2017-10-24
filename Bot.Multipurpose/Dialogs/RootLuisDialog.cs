@@ -1,4 +1,5 @@
-﻿using Microsoft.Bot.Builder.Dialogs;
+﻿using Bot.Multipurpose.Dialogs;
+using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using Microsoft.Bot.Connector;
@@ -29,6 +30,27 @@ namespace Bot.Multipurpose
 
             await context.PostAsync(message);
             context.Done<object>(null);
+        }
+
+        [LuisIntent("CardDesigns")]
+        public async Task CardDesigns(IDialogContext context, IAwaitable<IMessageActivity> iMessage, LuisResult luisResult )
+        {
+            
+            EntityRecommendation luisEntityType;
+            if (luisResult.TryFindEntity(constants.CardDesigns.AdaptiveCard, out luisEntityType))
+            {
+                context.Call(new AdaptiveCardDialog(), this.ResumeFromDialogCallBack);
+            } 
+            
+            
+        }
+
+        [LuisIntent("SampleCards")]
+        public async Task Cards(IDialogContext context, IAwaitable<IMessageActivity> iMessage, LuisResult luisResult)
+        {
+                      
+            context.Call(new CardsDialog(), this.ResumeFromDialogCallBack);
+            
         }
 
         [LuisIntent("Greetings")]
@@ -66,6 +88,11 @@ namespace Bot.Multipurpose
         {
             var message = "Hooray!! I don't know what to reply. My developer has not designed me to handle this intent?";
             await context.PostAsync(message);          
+            context.Done<object>(null);
+        }
+
+        private async Task ResumeFromDialogCallBack(IDialogContext context, IAwaitable<object> result)
+        {
             context.Done<object>(null);
         }
     }
