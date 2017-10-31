@@ -12,7 +12,7 @@ namespace Bot.Multipurpose.Dialogs
     [Serializable]
     public class AdaptiveCardDialog : IDialog<object>
     {
-        private readonly IDictionary<string, string> options = new Dictionary<string, string> {
+        private  readonly  IDictionary<string, string> options = new Dictionary<string, string> {
              { "1", "1. Show Demo Adaptive Card " },
              { "2", "2. Show Demo for Adaptive Card Design with Column" },
              { "3" , "3. Input Adaptive card Design" },

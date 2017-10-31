@@ -16,6 +16,13 @@ namespace Bot.Multipurpose
     [LuisModel("85aaccef-4c54-4318-80bc-912123a03d5a", "8f6d88e12e98423e8e74401ace73c4f4")]
     public class RootLuisDialog : LuisDialog<object>
     {
+        public RootLuisDialog(ILuisService service)
+            : base(service)
+        {
+        }
+        public RootLuisDialog()
+        { }
+
         public static int greetingcounter = 1;
 
         [LuisIntent("GetChannelUrl")]
@@ -35,14 +42,13 @@ namespace Bot.Multipurpose
         [LuisIntent("CardDesigns")]
         public async Task CardDesigns(IDialogContext context, IAwaitable<IMessageActivity> iMessage, LuisResult luisResult )
         {
-            
+
             EntityRecommendation luisEntityType;
             if (luisResult.TryFindEntity(constants.CardDesigns.AdaptiveCard, out luisEntityType))
             {
                 context.Call(new AdaptiveCardDialog(), this.ResumeFromDialogCallBack);
-            } 
-            
-            
+            }
+
         }
 
         [LuisIntent("SampleCards")]

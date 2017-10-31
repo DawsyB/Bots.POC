@@ -25,7 +25,7 @@ namespace Skype.IVRBot
                 // calculate something for us to return
                 int length = (activity.Text ?? string.Empty).Length;
                 // return our reply to the user
-                Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters. You can also send me a .wav file and I will tell you it says ;)");
+                Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters. You can also send me a .wav file and I will tell you what it says ;)");
                 await connector.Conversations.ReplyToActivityAsync(reply);
             }
             else

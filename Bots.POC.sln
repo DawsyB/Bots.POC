@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skype.VoiceAttachments", "QuakerBot\Skype.VoiceAttachments.csproj", "{A8BA1066-5695-4D71-ABB4-65E5A5E0C3D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skype.VoiceAttachments.QuakerBot", "QuakerBot\Skype.VoiceAttachments.QuakerBot.csproj", "{A8BA1066-5695-4D71-ABB4-65E5A5E0C3D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skype.IVRBot", "Skype.IVRBot\Skype.IVRBot.csproj", "{4560447E-F422-41A9-9671-A77587A16C24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Multipurpose", "Bot.Multipurpose\Bot.Multipurpose.csproj", "{02003F6C-36CF-4E75-88B3-A623FCA982E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentTransferBot", "HumanHandOff\AgentTransferBot.csproj", "{25DC47EE-BAF7-44A8-BBB1-D402329B8225}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bots.POC.UnitTest", "Bot.Multipurpose.UnitTest\Bots.POC.UnitTest.csproj", "{99783767-7518-481F-8057-089B2B68144C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{25DC47EE-BAF7-44A8-BBB1-D402329B8225}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25DC47EE-BAF7-44A8-BBB1-D402329B8225}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25DC47EE-BAF7-44A8-BBB1-D402329B8225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99783767-7518-481F-8057-089B2B68144C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99783767-7518-481F-8057-089B2B68144C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99783767-7518-481F-8057-089B2B68144C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99783767-7518-481F-8057-089B2B68144C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

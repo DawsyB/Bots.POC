@@ -23,17 +23,21 @@ namespace Bot.Multipurpose.Dialogs
 
         public async Task StartAsync(IDialogContext context)
         {
-           
-            PromptDialog.Choice<string>(
-                context,
-                this.DisplaySelectedCard,
-                this.options,
-                "What card would like to test?",
-                "Ooops, what you wrote is not a valid option, please try again",
-                3,
-                PromptStyle.PerLine);
+
+            await showPromptOptions(context);
         }
 
+        public async Task showPromptOptions(IDialogContext context)
+        {
+            PromptDialog.Choice<string>(
+                          context,
+                          this.DisplaySelectedCard,
+                          this.options,
+                          "What card would like to test?",
+                          "Ooops, what you wrote is not a valid option, please try again",
+                          3,
+                          PromptStyle.PerLine);
+        }
         public async Task DisplaySelectedCard(IDialogContext context, IAwaitable<string> result)
         {
             var selectedCard = await result;
@@ -51,8 +55,8 @@ namespace Bot.Multipurpose.Dialogs
                 message.Attachments.Add(attachment);
 
                 await context.PostAsync(message);
+                await showPromptOptions(context);
 
-                context.Wait(this.MessageReceivedAsync);
             }
         }
 

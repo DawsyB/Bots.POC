@@ -25,9 +25,18 @@ namespace AgentTransferBot
         public async Task None(IDialogContext context, LuisResult luisResult)
         {
             await context.PostAsync("I didn't understand you.");
-            await context.PostAsync("You can contact our cusomer care representative by typing \"Connect me with customer care\"");
+            await context.PostAsync("You can contact our customer care representative by typing \"Connect me with customer care\"");
             context.Done<object>(null);
         }
+
+        [LuisIntent("Greeting")]
+        public async Task greeting(IDialogContext context, LuisResult luisResult)
+        {
+            await context.PostAsync("Hey there");
+            await context.PostAsync("How can I help you today?");
+            context.Done<object>(null);
+        }
+
 
         [LuisIntent("AgentTransfer")]
         public async Task AgentTransfer(IDialogContext context, IAwaitable<IMessageActivity> message, LuisResult luisResult)
