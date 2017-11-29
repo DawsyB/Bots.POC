@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skype.VoiceAttachments.QuakerBot", "QuakerBot\Skype.VoiceAttachments.QuakerBot.csproj", "{A8BA1066-5695-4D71-ABB4-65E5A5E0C3D4}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentTransferBot", "HumanHandOff\AgentTransferBot.csproj", "{25DC47EE-BAF7-44A8-BBB1-D402329B8225}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bots.POC.UnitTest", "Bot.Multipurpose.UnitTest\Bots.POC.UnitTest.csproj", "{99783767-7518-481F-8057-089B2B68144C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadQnAData", "LoadQnAData\LoadQnAData.csproj", "{060BB51B-546B-47C0-9C08-9D046279A33B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +41,15 @@ Global
 		{99783767-7518-481F-8057-089B2B68144C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99783767-7518-481F-8057-089B2B68144C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99783767-7518-481F-8057-089B2B68144C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060BB51B-546B-47C0-9C08-9D046279A33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060BB51B-546B-47C0-9C08-9D046279A33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060BB51B-546B-47C0-9C08-9D046279A33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060BB51B-546B-47C0-9C08-9D046279A33B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11D85BF3-3E60-4241-B199-AAD043E8E8CD}
 	EndGlobalSection
 EndGlobal
