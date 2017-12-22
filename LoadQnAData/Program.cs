@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +17,11 @@ namespace LoadQnAData
 
 		static void Main(string[] args)
 		{
-
+			// loadsymbols();
 			MainAsync().GetAwaiter().GetResult(); ;
 		}
+
+		
 
 		static async Task MainAsync()
 		{
@@ -95,6 +99,54 @@ namespace LoadQnAData
 			catch (Exception ex)
 			{
 				return null;
+			}
+		}
+
+		/// <summary>
+		/// Method to retunr currency symbols based on the country
+		/// </summary>
+		private static void loadsymbols()
+		{
+			Console.WriteLine(getsymbol("AUD"));
+			Console.WriteLine(getsymbol("USD"));
+			Console.WriteLine(getsymbol("EUR"));
+			Console.WriteLine(getsymbol("GBP"));
+			Console.WriteLine(getsymbol("CHF"));
+			Console.WriteLine(getsymbol("NZD"));
+			Console.WriteLine(getsymbol("CAD"));
+			Console.WriteLine(getsymbol("CHF"));
+			Console.WriteLine(getsymbol("CNY"));
+			Console.WriteLine(getsymbol("SGD"));
+			Console.WriteLine(getsymbol("JPY"));
+			Console.WriteLine(getsymbol("HKD"));
+			Console.WriteLine(getsymbol("INR"));
+			Console.WriteLine(getsymbol("ZAR"));
+			Console.WriteLine(getsymbol("SEK"));
+			Console.WriteLine(getsymbol("DEM"));
+			Console.WriteLine(getsymbol("CHF"));
+			Console.WriteLine(getsymbol("IDR"));
+
+
+
+
+			Console.ReadLine();
+		}
+
+		private static string getsymbol(string code)
+		{
+			try
+			{
+				System.Globalization.RegionInfo regionInfo = (from culture in System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes.InstalledWin32Cultures)
+															  where culture.Name.Length > 0 && !culture.IsNeutralCulture
+															  let region = new System.Globalization.RegionInfo(culture.LCID)
+															  where String.Equals(region.ISOCurrencySymbol, code, StringComparison.InvariantCultureIgnoreCase)
+															  select region).First();
+				return regionInfo.CurrencySymbol;
+			}
+
+			catch (Exception ex)
+			{
+				return code;
 			}
 		}
 

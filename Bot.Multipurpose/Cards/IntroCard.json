@@ -1,0 +1,106 @@
+﻿{
+	"contentType": "application/vnd.microsoft.card.adaptive",
+	"content": {
+		"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+		"type": "AdaptiveCard",
+		"version": "1.0",
+		"speak": "Type the following to get started. Menu - to display the menu. Cancel - to start again. OR simply start typing your topic ie 'statement of course completion'",
+		"body": [
+			{
+				"type": "TextBlock",
+				"text": "Type the following to get started...",
+				"wrap": true,
+				"weight": "bolder",
+				"size": "Large",
+				"isSubtle": false
+			},
+			{
+				"type": "Container",
+				"items": [
+					{
+						"type": "ColumnSet",
+						"columns": [
+							{
+								"type": "Column",
+								"width": "auto",
+								"items": [
+									{
+										"type": "Image",
+										"url": "https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=TJVVeZU2ywUp%2B1DWYl7NSSjW54A%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6nlh8Tw1It6a2FowGz60oISIfYC2G-KlTfi6ThEQaYCLauCMPg1yxnCV17520xAu3eGU2GbM7ATO_qAIEIz-mRXZGab1YORygf1UV7ycsWaysom5mPUMbUTTZgxaJIYyg",
+										"altText": "UTS logo",
+										"id": "intro-img",
+										"size": "small"
+									}
+								]
+							},
+							{
+								"type": "Column",
+								"width": "stretch",
+								"spacing": "medium",
+								"separator": true,
+								"items": [
+									{
+										"type": "TextBlock",
+										"text": "Channel URL",
+										"color": "accent",
+										"size": "medium",
+										"horizontalAlignment": "left"
+									},
+									{
+										"type": "TextBlock",
+										"text": "To display different channel url's",
+										"weight": "lighter",
+										"spacing": "none",
+										"horizontalAlignment": "left"
+									},
+
+									{
+										"type": "TextBlock",
+										"text": "Sample cards",
+										"color": "accent",
+										"size": "medium",
+										"spacing": "none",
+										"horizontalAlignment": "left"
+									},
+									{
+										"type": "TextBlock",
+										"text": "To display list of OTB cards",
+										"weight": "lighter",
+										"spacing": "none",
+										"horizontalAlignment": "left"
+									},
+
+									{
+										"type": "TextBlock",
+										"text": "Adaptive cards",
+										"color": "accent",
+										"size": "medium",
+										"spacing": "none",
+										"horizontalAlignment": "left"
+									},
+									{
+										"type": "TextBlock",
+										"text": "To display list of adaptive cards",
+										"weight": "lighter",
+										"spacing": "none",
+										"horizontalAlignment": "left"
+									},
+									{
+										"separator": true,
+										"spacing": "medium",
+										"type": "TextBlock",
+										"text": "Simply start typing one of your above topic",
+										"size": "default",
+										"id": "intro-img",
+										"wrap": true,
+										"horizontalAlignment": "left"
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

@@ -23,6 +23,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -132,8 +133,10 @@
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Dialogs\Cards\AdaptiveCardDialog.cs" />
     <Compile Include="Dialogs\Cards\CardsDialog.cs" />
+    <Compile Include="Dialogs\FeedbackDialog.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Dialogs\RootLuisDialog.cs" />
+    <Compile Include="Forms\FeedbackForm.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,6 +146,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Cards\IntroCard.json" />
     <None Include="Properties\PublishProfiles\BotMultipurposeDaws - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

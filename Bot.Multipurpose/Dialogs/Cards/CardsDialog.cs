@@ -52,9 +52,11 @@ namespace Bot.Multipurpose.Dialogs
             }
             else
             {
-                message.Attachments.Add(attachment);
+				message.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+				message.Attachments.Add(attachment);
+				message.Attachments.Add(attachment);
 
-                await context.PostAsync(message);
+				await context.PostAsync(message);
                 await showPromptOptions(context);
 
             }
@@ -91,9 +93,9 @@ namespace Bot.Multipurpose.Dialogs
             {
                 Title = "BotFramework Hero Card",
                 Subtitle = "Your bots — wherever your users are talking",
-                Text = "Build and connect intelligent bots to interact with your users naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.",
-                Images = new List<CardImage> { new CardImage("https://sec.ch9.ms/ch9/7ff5/e07cfef0-aa3b-40bb-9baa-7c9ef8ff7ff5/buildreactionbotframework_960.jpg") },
-                Buttons = new List<CardAction> { new CardAction(ActionTypes.OpenUrl, "Get Started", value: "https://docs.microsoft.com/bot-framework") }
+                //Text = "Build and connect intelligent bots to interact with your users naturally wherever they are, from text/sms to Skype, Slack, Office 365 mail and other popular services.",
+                //Images = new List<CardImage> { new CardImage("https://sec.ch9.ms/ch9/7ff5/e07cfef0-aa3b-40bb-9baa-7c9ef8ff7ff5/buildreactionbotframework_960.jpg") },
+                Buttons = new List<CardAction> { new CardAction(ActionTypes.ImBack, "Get Started", value: "https://docs.microsoft.com/bot-framework"), new CardAction(ActionTypes.OpenUrl, "Get Started", value: "https://docs.microsoft.com/bot-framework"), new CardAction(ActionTypes.OpenUrl, "Get Started", value: "https://docs.microsoft.com/bot-framework"), new CardAction(ActionTypes.OpenUrl, "Get Started", value: "https://docs.microsoft.com/bot-framework"), new CardAction(ActionTypes.OpenUrl, "Get Started", value: "https://docs.microsoft.com/bot-framework") }
             };
 
             return heroCard.ToAttachment();
