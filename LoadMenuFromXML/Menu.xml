@@ -1,0 +1,23 @@
+﻿<menulist>
+	<menutitle>Main menu text goes here</menutitle>
+	<topmenu>
+		<menuitem>Jokes</menuitem>
+		<menutitle>Jokes? No worries, here's how I can help.</menutitle>
+		<submenu>
+			<menuitem>Tell me a joke on Chat Bot</menuitem>
+		</submenu>
+	</topmenu>
+	<topmenu>
+		<menuitem>Facts</menuitem>
+		<menutitle>Sure, I can provide plenty of info about Facts.</menutitle>
+		<submenu>
+			<menuitem>Tell me a fact about Cats</menuitem>
+		</submenu>
+		<submenu>
+			<menuitem>Tell me a fact about Cats</menuitem>
+		</submenu>
+	</topmenu>
+	<topmenu>
+		<menuitem>Order a Pizza</menuitem>
+	</topmenu>	
+</menulist>
