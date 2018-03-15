@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skype.VoiceAttachments.QuakerBot", "QuakerBot\Skype.VoiceAttachments.QuakerBot.csproj", "{A8BA1066-5695-4D71-ABB4-65E5A5E0C3D4}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Misc", "03 Misc", "{FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LUISApiV2.0_Test", "LUISApiV2.0_Test\LUISApiV2.0_Test.csproj", "{F1F98EE2-694C-4459-9AAA-71A1871EA76C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LUISApiTestCore", "LUISApiTestCore\LUISApiTestCore.csproj", "{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,14 @@ Global
 		{F1F98EE2-694C-4459-9AAA-71A1871EA76C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F1F98EE2-694C-4459-9AAA-71A1871EA76C}.Release|x64.ActiveCfg = Release|Any CPU
 		{F1F98EE2-694C-4459-9AAA-71A1871EA76C}.Release|x64.Build.0 = Release|Any CPU
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}.Debug|x64.Build.0 = Debug|Any CPU
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}.Release|x64.ActiveCfg = Release|Any CPU
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +131,7 @@ Global
 		{5507C3B7-A9E2-421D-B078-A605461C65D3} = {FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}
 		{6F637044-47AC-44C3-8B5C-350CF94B6CBF} = {FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}
 		{F1F98EE2-694C-4459-9AAA-71A1871EA76C} = {FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}
+		{B1EB1569-A2BA-41F3-B393-57F5BE5D2139} = {FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11D85BF3-3E60-4241-B199-AAD043E8E8CD}

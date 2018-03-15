@@ -12,6 +12,9 @@ namespace LUISApiV2._0_Test
 		static void Main(string[] args)
 		{
 			var result = CreateLuisApp.MakeRequest().GetAwaiter().GetResult();
+
+			 
+			//result.Content.ReadAsStringAsync().Result; -  to return the id
 			Console.WriteLine("Hit ENTER to exit...");
 			Console.ReadLine();
 		}

@@ -3,12 +3,11 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Net.Http;
 using System.Web;
-using Microsoft.Cognitive.LUIS;
-using System.Web.Helpers;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using LUISApiTestCore.Model;
 
-namespace LUISApiV2._0_Test.LUIS
+namespace LUISApiTestCore.LUIS
 {
 	class CreateLuisApp
 	{
@@ -21,7 +20,7 @@ namespace LUISApiV2._0_Test.LUIS
 				var queryString = HttpUtility.ParseQueryString(string.Empty);
 
 				// Request headers
-				client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "50b45f2ccf7147e5969b897f2be08944");
+				client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "");
 				
 
 				var uri = "https://australiaeast.api.cognitive.microsoft.com/luis/api/v2.0/apps/?" + queryString;
@@ -51,14 +50,5 @@ namespace LUISApiV2._0_Test.LUIS
 		
 	}
 
-	public class LuisApp
-	{
-		public string name = "MyFirstDummyApp";
-		public string description = "This is my first dummy application";
-		public string culture = "en-us";
-		public string usageScenario = "IoT";
-		public string domain = "Comics";
-		public string initialVersionId = "1.0";
 
-	}
 }
