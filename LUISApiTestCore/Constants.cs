@@ -16,8 +16,5 @@ namespace LUISApiTestCore
 		public const string LUISTrainURL = "https://australiaeast.api.cognitive.microsoft.com/luis/api/v2.0/apps/{0}/versions/{1}/train";
 		public const string LUISPublishURL = "https://australiaeast.api.cognitive.microsoft.com/luis/api/v2.0/apps/{0}/publish";
 		public const string LUISTrainStatusURL = "https://australiaeast.api.cognitive.microsoft.com/luis/api/v2.0/apps/{0}/versions/{1}/train";
-
-
-
 	}
 }
