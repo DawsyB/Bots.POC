@@ -30,11 +30,11 @@ namespace LUISApiTestCore
 			IDataService dataservice = new DataService();
 
 			//Create LUIS APP
-			await CreateLuisApp(luisservice, dataservice);
+			//await CreateLuisApp(luisservice, dataservice);
 
 
 			//Add LUIS Intent
-			await AddIntents(luisservice, dataservice);
+			//await AddIntents(luisservice, dataservice);
 
 			//Update LUIS Intent
 			// Daws: Doesn't work gives out resource not found

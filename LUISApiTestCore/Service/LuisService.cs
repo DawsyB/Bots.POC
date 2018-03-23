@@ -20,18 +20,18 @@ namespace LUISApiTestCore.Service
 		public async Task<ServiceResponse> CreateLuisApp(LuisApp App)
 		{
 			var body = JsonConvert.SerializeObject(App);
-			return GetServiceResponse(await GetResponse(body, Constants.LUISAppURL));
+			return GetServiceResponse(await GetResponse(body, Constants.LUISAppURL,Constants.RequestType.post.ToString()));
 
 		}
 
 		public async Task<ServiceResponse> TrainLuis(LuisApp App)
 		{
-			return GetServiceResponse(await GetResponse(string.Empty, string.Format(Constants.LUISTrainURL, App.appId, App.versionId)));
+			return GetServiceResponse(await GetResponse(string.Empty, string.Format(Constants.LUISTrainURL, App.appId, App.versionId), Constants.RequestType.post.ToString()));
 		}
 
 		public async Task<ServiceResponse> GetTrainLuisStatus(LuisApp App)
 		{
-			return GetServiceResponse(await GetResponse(string.Format(Constants.LUISTrainStatusURL, App.appId, App.versionId)));
+			return GetServiceResponse(await GetResponse(string.Format(Constants.LUISTrainStatusURL, App.appId, App.versionId), Constants.RequestType.post.ToString()));
 		}
 		public async Task<ServiceResponse> PublishLuis(LuisApp App)
 		{
@@ -40,7 +40,7 @@ namespace LUISApiTestCore.Service
 			bodyobj.isStaging = false;
 			bodyobj.region = Constants.LUISAppRegion;
 			var body = JsonConvert.SerializeObject(bodyobj) ;
-			return GetServiceResponse(await GetResponse(body, string.Format(Constants.LUISPublishURL, App.appId)));
+			return GetServiceResponse(await GetResponse(body, string.Format(Constants.LUISPublishURL, App.appId), Constants.RequestType.post.ToString()));
 		}
 		#endregion
 
@@ -53,7 +53,7 @@ namespace LUISApiTestCore.Service
 			{
 				IntentServiceResponse IntentResponse = new IntentServiceResponse();
 				var body = JsonConvert.SerializeObject(intent);
-				var response = GetServiceResponse(await GetResponse(body, string.Format(Constants.LUISIntentURL, intent.appId, intent.versionId)));
+				var response = GetServiceResponse(await GetResponse(body, string.Format(Constants.LUISIntentURL, intent.appId, intent.versionId), Constants.RequestType.put.ToString()));
 				IntentResponse.IsSuccess = response.IsSuccess;
 				IntentResponse.serviceresponse = response;
 				IntentResponse.Intent = intent.name;
@@ -86,7 +86,7 @@ namespace LUISApiTestCore.Service
 		/// <param name="data"></param>
 		/// <param name="ApiUrl"></param>
 		/// <returns></returns>
-		public async Task<HttpResponseMessage> GetResponse(string data, string ApiUrl)
+		public async Task<HttpResponseMessage> GetResponse(string data, string ApiUrl,string requestType)
 		{
 			try
 			{
@@ -104,7 +104,10 @@ namespace LUISApiTestCore.Service
 				using (var content = new ByteArrayContent(byteData))
 				{
 					content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+					if(requestType == "post")
 					response = await client.PostAsync(uri, content);
+					else if (requestType == "put")
+					response = await client.PutAsync(uri, content);
 				}
 				return response;
 			}
