@@ -1,0 +1,37 @@
+﻿{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"cogServicesSku": { "value": "F0" },
+		"cogServicesName": { "value": "luis-cog-askUTS" },
+		"cogServicesKind": { "value": "LUIS" },
+		"hostingPlanName": { "value": "UTS-prod-asp-AskUTS" },
+		"MicrosoftAppId": { "value": "3e265599-28a2-4167-9d84-6f3e4086e5cb" },
+		"MicrosoftAppPassword": { "value": "jnwjSGTS[bgbYFL55809_=$" },
+		"LuisModelId": { "value": "df6ef9ba-06bd-457e-803a-dc11061e95a3" },
+		"LuisSubscriptionKey": { "value": "0e21164492814977a3ac3da1ac81853f" },
+		"QnASubscriptionKey": { "value": "95f32b854bee41d784b0b0215fe8cead" },
+		"QnAKbId": { "value": "75f0285d-80b5-464b-becc-2df87c3f77e8" },
+		"StubEmailService": { "value": "false" },
+		"TraceAllActivities": { "value": "true" },
+		"UseAzureTableBotState": { "value": "true" },
+		"LayeredConversationConfigLocation": { "value": " " },
+		"GetLayeredConversationConfigPathAutomatically": { "value": "true" },
+		"SendGridApiKey": { "value": "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" },
+		"aad:Callback": { "value": "https://uts-dev-askutsbot.azurewebsites.net:3900/Callback" },
+		"PostLogoutUrl": { "value": "https://uts-dev-askutsbot.azurewebsites.net:3900/LogOut" },
+		"storageAccountType": { "value": "Standard_LRS" },
+		"storageAccountName": { "value": "utsprodstorageaskutsbot" }, // Storage account name must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		"botApiName": { "value": "UTS-prod-AskUTSBot" },
+		"appInsightsName": { "value": "UTS-prod-ai-AskUTSBot" },
+		"botChannelRegistrationName": { "value": "AskUTSProd" },
+		"botChannelRegistrationSku": { "value": "F0" },					
+		"workloadTag": { "value": "Prod-AskUTSBot" },
+		"LuisDomain": { "value": "southeastasia.api.cognitive.microsoft.com" },
+		"QueryQnaFromLuis": { "value": "true" },
+		"MinimumScoreForLuisMatch": { "value": "0.25" },
+		"UseQnACacheService": { "value": "true" },
+		"QnACacheMinutes": { "value": "1440" },
+		"MenuCacheMinutes": { "value": "1440" }
+	}
+}
