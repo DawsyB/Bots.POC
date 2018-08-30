@@ -18,7 +18,8 @@ namespace LoadQnAData
 		static void Main(string[] args)
 		{
 			// loadsymbols();
-			MainAsync().GetAwaiter().GetResult(); ;
+			//MainAsync().GetAwaiter().GetResult(); ;
+			DownloadContentOfKBV4.Process();
 		}
 
 		
