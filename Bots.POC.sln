@@ -19,11 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadMenuFromXML", "LoadMenu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPOnlineCSOM", "SPOnlineCSOM\SPOnlineCSOM.csproj", "{6F637044-47AC-44C3-8B5C-350CF94B6CBF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 ServiceFabric", "02 ServiceFabric", "{B0ADEEA7-EFD6-4246-BDA9-0F9E2A402EC5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Bots", "01 Bots", "{4EAA65C9-F612-4DAB-BFDA-F71F711286EA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Misc", "03 Misc", "{FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Misc", "02 Misc", "{FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LUISApiV2.0_Test", "LUISApiV2.0_Test\LUISApiV2.0_Test.csproj", "{F1F98EE2-694C-4459-9AAA-71A1871EA76C}"
 EndProject
@@ -37,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreQnAMakerService", "N
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthCoreTest", "AuthCoreTest\AuthCoreTest.csproj", "{A824660A-044A-46B4-B25E-379461857061}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntermediatorBotSample", "intermediator-bot-sample-master\IntermediatorBotSample\IntermediatorBotSample.csproj", "{035B26AC-858E-442C-9903-CFF2DFEE217F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntermediatorBotSample.V4", "intermediator-bot-sample-master\IntermediatorBotSample\IntermediatorBotSample.V4.csproj", "{035B26AC-858E-442C-9903-CFF2DFEE217F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntermediatorBotSample.V3.x", "intermediator-bot-sample-1.1\IntermediatorBotSample\IntermediatorBotSample.V3.x.csproj", "{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -167,6 +167,14 @@ Global
 		{035B26AC-858E-442C-9903-CFF2DFEE217F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{035B26AC-858E-442C-9903-CFF2DFEE217F}.Release|x64.ActiveCfg = Release|Any CPU
 		{035B26AC-858E-442C-9903-CFF2DFEE217F}.Release|x64.Build.0 = Release|Any CPU
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}.Debug|x64.Build.0 = Debug|Any CPU
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}.Release|x64.ActiveCfg = Release|Any CPU
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -187,6 +195,7 @@ Global
 		{04DB3CEC-DA7F-439F-84EB-3144EEB89883} = {FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}
 		{A824660A-044A-46B4-B25E-379461857061} = {FBB0909F-9BC5-4708-AF2F-9E6B8639EDE8}
 		{035B26AC-858E-442C-9903-CFF2DFEE217F} = {4EAA65C9-F612-4DAB-BFDA-F71F711286EA}
+		{5F019191-24EF-4628-9C7F-1EF3EE5AACA7} = {4EAA65C9-F612-4DAB-BFDA-F71F711286EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11D85BF3-3E60-4241-B199-AAD043E8E8CD}

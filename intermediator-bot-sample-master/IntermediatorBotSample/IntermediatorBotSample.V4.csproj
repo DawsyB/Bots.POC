@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>IntermediatorBotSampleV4</RootNamespace>
+    <AssemblyName>IntermediatorBotSampleV4</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
