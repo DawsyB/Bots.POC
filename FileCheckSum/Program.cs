@@ -31,7 +31,7 @@ namespace FileCheckSum
 				
 			}
 
-			CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=perpetualfilewatcher;AccountKey=5UhhTGLz2GRyjvA64zpNkqHXlAjrGce3CDUOHjpLLOeb2VeodWYLttdB3fZLwmsz7mpHRuSK4OM6ehFEzFIsWA==;EndpointSuffix=core.windows.net");
+			CloudStorageAccount storageAccount = CloudStorageAccount.Parse("");
 			CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 			CloudBlobContainer container = blobClient.GetContainerReference("portfolio-analytics");
 			var outputDirectory = container.GetDirectoryReference("rmbs/processing/");
