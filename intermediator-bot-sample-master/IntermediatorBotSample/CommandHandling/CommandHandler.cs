@@ -1,5 +1,6 @@
 ﻿using IntermediatorBotSample.MessageRouting;
 using IntermediatorBotSample.Resources;
+using IntermediatorBotSampleV4.Resources;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Connector;
 using Microsoft.Bot.Schema;

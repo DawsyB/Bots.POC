@@ -4,7 +4,16 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <RootNamespace>IntermediatorBotSampleV4</RootNamespace>
     <AssemblyName>IntermediatorBotSampleV4</AssemblyName>
+    <UserSecretsId>a4cef26e-7d5b-49cb-9667-3852823c8a5c</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\webchat.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="webchat.html" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BotMessageRouting" Version="2.0.1-alpha" />
@@ -13,7 +22,7 @@
     <PackageReference Include="Microsoft.Bot.Builder.Core.Extensions" Version="4.0.1-preview" />
     <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.0.1-preview" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Compile Update="Resources\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -27,10 +36,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>

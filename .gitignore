@@ -246,3 +246,6 @@ ModelManifest.xml
 /HumanHandOff/human-handoff-bot-master.zip
 /HumanHandOff/AgentTransferBot/secrets.config
 /Bot.Multipurpose/secrets.config
+/intermediator-bot-sample-master/IntermediatorBotSample/Pages/webchat.html
+/intermediator-bot-sample-master/IntermediatorBotSample/webchat.html
+/intermediator-bot-sample-1.1/IntermediatorBotSample/AppSettingsAndCredentials.config

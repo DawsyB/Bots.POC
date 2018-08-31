@@ -177,6 +177,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.htm" />
+    <Content Include="Documentation\Screenshots\AgentUI.png" />
+    <Content Include="Documentation\Screenshots\AppSettingsInWebConfig.png" />
+    <Content Include="Documentation\Screenshots\ConversationInEmulator.png" />
+    <Content Include="Documentation\Screenshots\ConversationInEmulatorWithAgentUI.png" />
+    <Content Include="Documentation\Screenshots\ConversationInSlack.png" />
+    <Content Include="Documentation\Screenshots\DirectMessagingChannelCreated.png" />
+    <Content Include="Documentation\Screenshots\Initialization.png" />
+    <Content Include="Documentation\Screenshots\NgrokLocalhostPortInEmulatorLog.png" />
+    <Content Include="Documentation\Screenshots\RequestAccepted.png" />
+    <Content Include="Documentation\Screenshots\RequestSent.png" />
+    <Content Include="Documentation\Screenshots\RetrievingBotSecret1.png" />
+    <Content Include="Documentation\Screenshots\RetrievingBotSecret2.png" />
+    <Content Include="Documentation\Screenshots\SettingBotEndpointAppIdAndPasswordInEmulator.png" />
+    <Content Include="Documentation\Screenshots\SettingNgrokPathInEmulatorSettings.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -215,6 +229,7 @@
     <Content Include="packages.config" />
     <Content Include="AppSettingsAndCredentials.config" />
     <None Include="Properties\PublishProfiles\IntermediatorBotSample - Web Deploy.pubxml" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

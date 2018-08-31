@@ -1,4 +1,5 @@
 ﻿using IntermediatorBotSample.Resources;
+using IntermediatorBotSampleV4.Resources;
 using Microsoft.Bot.Schema;
 using System;
 using System.Collections.Generic;
